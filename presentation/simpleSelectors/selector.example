@@ -5,7 +5,7 @@ const state = {
 
 // If using lodash-fp, you can simplify this:
 // const todosSelector = getOr([])('todos');
-const todosSelector = state => state && state.todos || [];
+const todosSelector = (state) => (state && state.todos) || [];
 
 const todos = todosSelector(state);
 // ["buy milk", "wash car", "validate existence"]

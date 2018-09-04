@@ -1,0 +1,19 @@
+import { createSelector } from "reselect";
+import getOr from "lodash/fp/getOr";
+import concat from "lodash/fp/concat";
+
+const state = {
+  todos: ["buy milk", "wash car", "validate existence"],
+  done: ["wake up"]
+};
+
+const doneSelector = getOr([])("done");
+const todosSelector = getOr([])("todos");
+
+const allItemsSelector = createSelector(
+  [todosSelector, doneSelector],
+  concat
+);
+
+const allItems = allItemsSelector(state);
+//  ["buy milk", "wash car", "validate existence", "wake up"];

@@ -1,0 +1,4 @@
+const allItemsSelector = createSelector(
+  [todosSelector, doneSelector], 
+  concat
+);
