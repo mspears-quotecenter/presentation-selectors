@@ -3,70 +3,87 @@ import React from "react";
 
 // Import Spectacle Core tags
 import {
-  BlockQuote,
-  Cite,
   Deck,
   Heading,
   ListItem,
   List,
-  Quote,
   Slide,
-  Text
+  Text,
+  CodePane,
+  Code,
+  S
 } from "spectacle";
 
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
 
+import basicSelectorExample from "../assets/basicSelector.example";
+import basicSelectorExampleUsage from "../assets/basicSelectorUsage.example";
+
 // Require CSS
 require("normalize.css");
 
-const theme = createTheme({
-  primary: "white",
-  secondary: "#1F2022",
-  tertiary: "#03A9FC",
-  quaternary: "#CECECE"
-}, {
-  primary: "Montserrat",
-  secondary: "Helvetica"
-});
-
-export default class Presentation extends React.Component {
-  render() {
-    return (
-      <Deck transition={["zoom", "slide"]} transitionDuration={500} theme={theme}>
-        <Slide transition={["zoom"]} bgColor="primary">
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            Spectacle Boilerplate
-          </Heading>
-          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-            open the presentation/index.js file to get started
-          </Text>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="tertiary">
-          <Heading size={6} textColor="primary" caps>Typography</Heading>
-          <Heading size={1} textColor="secondary">Heading 1</Heading>
-          <Heading size={2} textColor="secondary">Heading 2</Heading>
-          <Heading size={3} textColor="secondary">Heading 3</Heading>
-          <Heading size={4} textColor="secondary">Heading 4</Heading>
-          <Heading size={5} textColor="secondary">Heading 5</Heading>
-          <Text size={6} textColor="secondary">Standard text</Text>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps>Standard List</Heading>
-          <List>
-            <ListItem>Item 1</ListItem>
-            <ListItem>Item 2</ListItem>
-            <ListItem>Item 3</ListItem>
-            <ListItem>Item 4</ListItem>
-          </List>
-        </Slide>
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-          <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
-          </BlockQuote>
-        </Slide>
-      </Deck>
-    );
+const theme = createTheme(
+  {
+    primary: "white",
+    secondary: "#1F2022",
+    tertiary: "#FA6304",
+    quaternary: "#CECECE"
+  },
+  {
+    primary: "Fira Code"
   }
-}
+);
+
+const Presentation = () => (
+  <Deck theme={theme}>
+    <Slide transition={["fade"]} bgColor="primary">
+      <Heading fit caps size={1}>
+        React Selectors with Reselect
+      </Heading>
+      <Text textColor="secondary" bold>
+        memoization of computed state
+      </Text>
+    </Slide>
+    <Slide transition={["fade"]} bgColor="primary">
+      <Heading fit caps size={1}>
+        What are selectors?
+      </Heading>
+      <Text textColor="secondary">
+        A selector is a pure function, that takes in state, and returns a
+        specific value.
+      </Text>
+      <CodePane
+        lang="javascript"
+        style={{ fontSize: "1em" }}
+        source={basicSelectorExample}
+      />
+    </Slide>
+    <Slide transition={["fade"]} bgColor="tertiary">
+      <Heading fit caps size={1} textColor="primary">
+        Using that selector with redux
+      </Heading>
+      <CodePane
+        lang="javascript"
+        style={{ fontSize: ".8em" }}
+        source={basicSelectorExampleUsage}
+      />
+    </Slide>
+    <Slide transition={["fade"]} bgColor="primary">
+      <Heading fit caps size={1}>
+        Why Use simple selectors?
+      </Heading>
+      <List>
+        <ListItem>
+          They are dry; you don't have to write{" "}
+          <Code>state => state.todos</Code> in every{" "}
+          <S type="bold">mapStateToProps</S>
+        </ListItem>
+        <ListItem>Pure functions are easy to stub in tests</ListItem>
+        <ListItem>You don't have to know the shape of state</ListItem>
+      </List>
+    </Slide>
+  </Deck>
+);
+
+export default Presentation;
