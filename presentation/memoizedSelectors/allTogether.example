@@ -1,0 +1,36 @@
+/* getOr, concat, Proptypes, createSelector, React imported */
+/* Selectors */
+const doneSelector = getOr([])("done");
+const todosSelector = getOr([])("todos");
+
+const allItemsSelector = createSelector(
+  [todosSelector, doneSelector],
+  concat
+);
+/* Selectors */
+
+
+/* Component */
+const TodosList = ({ todos }) => (
+  <ul>{todos.map((todo) => <li key={todo}>{todo}</li>)}</ul>
+);
+TodosList.propTypes = {
+  todos: PropTypes.arrayOf(PropTypes.string).isRequired
+};
+
+const mapStateToProps = (state) => ({
+  todos: todosSelector(state)
+});
+/* Component */
+
+// A mocked redux connect
+const connect = (mapStateToProps) => (Component) => {
+  const state = {
+    todos: ["buy milk", "wash car", "validate existence"],
+    done: ["wake up"]
+  };
+  return <Component {...mapStateToProps(state)} />;
+};
+
+// render is provided by this presentation's code editor
+render(connect(mapStateToProps)(TodosList));

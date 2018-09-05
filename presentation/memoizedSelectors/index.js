@@ -6,12 +6,18 @@ import {
   Slide,
   Text,
   CodePane,
-  Code
+  Code,
+  ComponentPlayground
 } from "spectacle";
+import PropTypes from "prop-types";
+import { createSelector } from "reselect";
+import getOr from "lodash/fp/getOr";
+import concat from "lodash/fp/concat";
 
 import allItemsExample from "./allItems.example";
 import allItemsSelectorExample from "./allItemsSelector.example";
 import allItemsNotCurriedExample from "./allItemsNotCurried.example";
+import allTogetherExample from "./allTogether.example";
 
 export default [
   <Slide transition={["fade"]} bgColor="secondary" key="memoized-1">
@@ -29,8 +35,9 @@ export default [
     </Heading>
     <CodePane
       lang="javascript"
-      style={{ fontSize: ".8em" }}
+      style={{ fontSize: ".7em" }}
       source={allItemsExample}
+      theme="external"
     />
   </Slide>,
   <Slide transition={["fade"]} bgColor="primary" key="memoized-3">
@@ -54,6 +61,7 @@ export default [
       lang="javascript"
       style={{ fontSize: "1em" }}
       source={allItemsSelectorExample}
+      theme="external"
     />
   </Slide>,
   <Slide transition={["fade"]} bgColor="tertiary" key="memoized-4">
@@ -64,6 +72,17 @@ export default [
       lang="javascript"
       style={{ fontSize: ".9em" }}
       source={allItemsNotCurriedExample}
+      theme="external"
+    />
+  </Slide>,
+  <Slide transition={["fade"]} bgColor="tertiary" key="memoized-4">
+    <Heading fit caps size={1} textColor="primary">
+      Let's see everything together
+    </Heading>
+    <ComponentPlayground
+      code={allTogetherExample}
+      scope={{ getOr, createSelector, concat, PropTypes }}
+      theme="external"
     />
   </Slide>,
   <Slide transition={["fade"]} bgColor="primary" key="memoized-5">

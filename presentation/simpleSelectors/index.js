@@ -25,8 +25,9 @@ export default [
     </Text>
     <CodePane
       lang="javascript"
-      style={{ fontSize: "1em" }}
+      style={{ fontSize: ".8em" }}
       source={selectorExample}
+      theme="external"
     />
   </Slide>,
   <Slide transition={["fade"]} bgColor="tertiary" key="simple-2">
@@ -35,8 +36,9 @@ export default [
     </Heading>
     <CodePane
       lang="javascript"
-      style={{ fontSize: ".9em" }}
+      style={{ fontSize: ".8em" }}
       source={usageExample}
+      theme="external"
     />
   </Slide>,
   <Slide transition={["fade"]} bgColor="primary" key="simple-3">

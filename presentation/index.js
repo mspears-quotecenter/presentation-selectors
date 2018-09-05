@@ -7,9 +7,12 @@ import createTheme from "spectacle/lib/themes/default";
 import simpleSelectors from "./simpleSelectors";
 import memoizedSelectors from "./memoizedSelectors";
 import testingSelectors from "./testingSelectors";
+import mockingSelectors from "./mockingSelectors";
 
 // Require CSS
 require("normalize.css");
+require("../assets/prism-darcula.css");
+require("./main.css");
 
 const theme = createTheme(
   {
@@ -19,7 +22,7 @@ const theme = createTheme(
     quaternary: "#CECECE"
   },
   {
-    primary: "Fira Code"
+    primary: "Fira Sans"
   }
 );
 
@@ -36,6 +39,7 @@ const Presentation = () => (
     {simpleSelectors}
     {memoizedSelectors}
     {testingSelectors}
+    {mockingSelectors}
   </Deck>
 );
 

@@ -7,11 +7,5 @@ const allItemsSelector = createSelector(
 // Using es6 prototype methods
 const allItemsSelector = createSelector(
   [todosSelector, doneSelector],
-  (todos, done) => todos.concat(done)
-);
-
-// Using the global es6 array method
-const allItemsSelector = createSelector(
-  [todosSelector, doneSelector],
-  Array.prototype.concat
+  (todos, done) => Array.prototype.concat(todos, done)
 );
