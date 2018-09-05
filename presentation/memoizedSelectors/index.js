@@ -49,12 +49,12 @@ export default [
     </Text>
     <List>
       <ListItem>
-        a single selector or an array of selectors{" "}
-        <Code>[todosSelector, doneSelector]</Code>
+        a single selector, n number selectors as arguments, or an array of
+        selectors <Code>[todosSelector, doneSelector]</Code>
       </ListItem>
       <ListItem>
-        a function that the given selectors' results are passed to{" "}
-        <Code>concat</Code>
+        the final argument is always a function that accepts the results of the
+        passed in selectors as arguments &nbsp;<Code>concat</Code>
       </ListItem>
     </List>
     <CodePane
@@ -70,7 +70,7 @@ export default [
     </Heading>
     <CodePane
       lang="javascript"
-      style={{ fontSize: ".9em" }}
+      style={{ fontSize: ".7em" }}
       source={allItemsNotCurriedExample}
       theme="external"
     />

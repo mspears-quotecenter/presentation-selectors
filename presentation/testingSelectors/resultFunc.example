@@ -1,1 +1,8 @@
-expect(allItemsSelector.resultFunc(['foo'], ['bar'])).toEqual(['foo', 'bar']);
+const allItemsSelector = createSelector(
+  [todosSelector, doneSelector],
+  concat
+);
+
+expect(allItemsSelector.resultFunc(
+  ["foo"], ["bar"]
+)).to.equal(["foo", "bar"]);

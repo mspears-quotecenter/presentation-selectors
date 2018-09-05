@@ -1,0 +1,13 @@
+const state = {
+  todos: ["foo"],
+  done: ["bar"]
+};
+
+const doneSelector = getOr([])("done");
+const todosSelector = getOr([])("todos");
+const allItemsSelector = createSelector(
+  [todosSelector, doneSelector],
+  concat
+);
+
+expect(allItemsSelector(state)).to.equal(["foo", "bar"]);

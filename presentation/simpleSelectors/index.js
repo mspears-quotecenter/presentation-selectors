@@ -51,7 +51,9 @@ export default [
         in every <S type="bold">mapStateToProps</S>
       </ListItem>
       <ListItem>Pure functions are easy to stub in tests</ListItem>
-      <ListItem>You don't have to know the shape of state</ListItem>
+      <ListItem>
+        You don't have to know the shape of state as a consumer
+      </ListItem>
     </List>
   </Slide>
 ];

@@ -9,3 +9,10 @@ const allItemsSelector = createSelector(
   [todosSelector, doneSelector],
   (todos, done) => Array.prototype.concat(todos, done)
 );
+
+// Foregoing the array literal
+const allItemsSelector = createSelector(
+  todosSelector,
+  doneSelector,
+  concat
+);
