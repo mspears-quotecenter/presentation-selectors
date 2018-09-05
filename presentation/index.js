@@ -6,6 +6,7 @@ import createTheme from "spectacle/lib/themes/default";
 
 import simpleSelectors from "./simpleSelectors";
 import memoizedSelectors from "./memoizedSelectors";
+import testingSelectors from "./testingSelectors";
 
 // Require CSS
 require("normalize.css");
@@ -24,16 +25,17 @@ const theme = createTheme(
 
 const Presentation = () => (
   <Deck theme={theme}>
-    <Slide transition={["fade"]} bgColor="primary">
+    <Slide transition={["fade"]} bgColor="secondary">
       <Heading fit caps size={1}>
         Selectors
       </Heading>
-      <Text textColor="secondary" bold>
-        reselect and react
+      <Text textColor="primary" bold>
+        Reselect and React
       </Text>
     </Slide>
     {simpleSelectors}
     {memoizedSelectors}
+    {testingSelectors}
   </Deck>
 );
 
