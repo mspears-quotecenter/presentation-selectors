@@ -5,4 +5,4 @@ const allItemsSelector = createSelector(
 
 expect(allItemsSelector.resultFunc(
   ["foo"], ["bar"]
-)).to.equal(["foo", "bar"]);
+)).toEqual(["foo", "bar"]);

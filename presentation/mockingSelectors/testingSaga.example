@@ -1,0 +1,24 @@
+// Action creator
+const saveTodosSuccess = (todos) => ({
+  type: "SAVE_TODOS_SUCCESS",
+  todos
+});
+
+// Saga
+function* saveTodosSaga() {
+  const todos = yield select(todosSelector);
+  /* Do async stuff */
+  yield put(saveTodosSuccess(todos));
+}
+
+// Stub selector
+const mockTodos = ["foo", "bar", "bing"];
+__Rewire__('todosSelector', () => mockTodos);
+
+// Test
+(async () => {
+  const dispatch = sinon.stub();
+  const expectedAction = saveTodosSuccess(mockTodos);
+  await runSaga({ dispatch }, saveTodosSaga).done;
+  expect(dispatch.calledWith(expectedAction)).toBe(true);
+})();

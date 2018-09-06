@@ -1,5 +1,4 @@
-/* getOr, concat, Proptypes, createSelector, React imported */
-/* Selectors */
+// Selectors
 const doneSelector = getOr([])("done");
 const todosSelector = getOr([])("todos");
 
@@ -7,10 +6,9 @@ const allItemsSelector = createSelector(
   [todosSelector, doneSelector],
   concat
 );
-/* Selectors */
 
 
-/* Component */
+// Component
 const TodosList = ({ todos }) => (
   <ul>{todos.map((todo) => <li key={todo}>{todo}</li>)}</ul>
 );
@@ -21,7 +19,6 @@ TodosList.propTypes = {
 const mapStateToProps = (state) => ({
   todos: todosSelector(state)
 });
-/* Component */
 
 // A mocked redux connect
 const connect = (mapStateToProps) => (Component) => {

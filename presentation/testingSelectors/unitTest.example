@@ -10,4 +10,4 @@ const allItemsSelector = createSelector(
   concat
 );
 
-expect(allItemsSelector(state)).to.equal(["foo", "bar"]);
+expect(allItemsSelector(state)).toEqual(["foo", "bar"]);

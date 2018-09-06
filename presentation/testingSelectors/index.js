@@ -6,8 +6,7 @@ import {
   Slide,
   Text,
   CodePane,
-  Code,
-  S
+  Code
 } from "spectacle";
 
 import resultFuncExample from "./resultFunc.example";

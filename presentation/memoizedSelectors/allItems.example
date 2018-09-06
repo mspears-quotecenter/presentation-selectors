@@ -1,7 +1,3 @@
-import { createSelector } from "reselect";
-import getOr from "lodash/fp/getOr";
-import concat from "lodash/fp/concat";
-
 const state = {
   todos: ["buy milk", "wash car", "validate existence"],
   done: ["wake up"]
