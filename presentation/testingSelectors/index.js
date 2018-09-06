@@ -35,13 +35,12 @@ export default [
       Testing composed selectors
     </Heading>
     <Text>
-      Imagine a scenario where you have this giant state and you don't care
-      about how stuff is sourced from state, only that you get certain things
-      from state. Thankfully, reselect provides a method to facilitate that{" "}
-      <Code>.resultFunc()</Code>.
+      Reselect provides a method on selectors created by{" "}
+      <Code>createSelector</Code>, <Code>.resultFunc()</Code> that allows you to
+      easily test composed selectors.
     </Text>
   </Slide>,
-  <Slide transition={["fade"]} bgColor="tertiary" key="testing-2">
+  <Slide transition={["fade"]} bgColor="tertiary" key="testing-4">
     <Heading caps size={1} textColor="primary">
       Using resultfunc
     </Heading>
@@ -51,5 +50,17 @@ export default [
       source={resultFuncExample}
       theme="external"
     />
+  </Slide>,
+  <Slide transition={["fade"]} bgColor="primary" key="testing-5">
+    <Heading caps size={1} textColor="tertiary">
+      Why use result func?
+    </Heading>
+    <List>
+      <ListItem>You don't need to construct the entireity of state</ListItem>
+      <ListItem>
+        You should already be testing the selectors composed individually (as
+        long as they aren't just simple getters from state)
+      </ListItem>
+    </List>
   </Slide>
 ];
