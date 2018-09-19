@@ -8,6 +8,7 @@ import simpleSelectors from "./simpleSelectors";
 import memoizedSelectors from "./memoizedSelectors";
 import testingSelectors from "./testingSelectors";
 import mockingSelectors from "./mockingSelectors";
+import summary from "./summary";
 
 // Require CSS
 require("normalize.css");
@@ -40,6 +41,7 @@ const Presentation = () => (
     {memoizedSelectors}
     {testingSelectors}
     {mockingSelectors}
+    {summary}
   </Deck>
 );
 

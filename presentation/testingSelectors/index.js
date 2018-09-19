@@ -55,7 +55,7 @@ export default [
       Why use result func?
     </Heading>
     <List>
-      <ListItem>You don't need to construct the entireity of state</ListItem>
+      <ListItem>You don't need to construct the entirety of state</ListItem>
       <ListItem>
         You should already be testing the selectors composed individually (as
         long as they aren't just simple getters from state)

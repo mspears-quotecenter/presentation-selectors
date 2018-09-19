@@ -7,7 +7,6 @@ const allItemsSelector = createSelector(
   concat
 );
 
-
 // Component
 const TodosList = ({ todos }) => (
   <ul>{todos.map((todo) => <li key={todo}>{todo}</li>)}</ul>

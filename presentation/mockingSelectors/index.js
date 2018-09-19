@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Heading,
-  ListItem,
-  List,
-  Slide,
-  Text,
-  CodePane,
-  Code
-} from "spectacle";
+import { Heading, ListItem, List, Slide, CodePane } from "spectacle";
 
 import testingSagaExample from "./testingSaga.example";
 
@@ -17,12 +9,7 @@ export default [
       Mocking selectors in other tests
     </Heading>
   </Slide>,
-  <Slide transition={["fade"]} bgColor="primary" key="mocking-2">
-    <Heading caps size={1}>
-      Summary of sthitsss
-    </Heading>
-  </Slide>,
-  <Slide transition={["fade"]} bgColor="tertiary" key="mocking-3">
+  <Slide transition={["fade"]} bgColor="tertiary" key="mocking-2">
     <Heading caps size={1} textColor="primary">
       Testing a saga
     </Heading>
@@ -32,5 +19,14 @@ export default [
       source={testingSagaExample}
       theme="external"
     />
+  </Slide>,
+  <Slide transition={["fade"]} bgColor="primary" key="mocking-3">
+    <Heading caps size={1}>
+      It's simple to mock
+    </Heading>
+    <List>
+      <ListItem>Use rewire or some ioc pattern</ListItem>
+      <ListItem>Stub selectors to return mockdata</ListItem>
+    </List>
   </Slide>
 ];
